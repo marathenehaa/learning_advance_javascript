@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(num1,num2){
+            document.write(num1+num2, "<br>");
+        }
+        sum(10, 20);
+    </script>
+
+    <script>
+        //using rest operator
+        //example1
+        function add(...numbers)
+        {
+            let sum = 0;
+            for (let i in numbers){
+                sum += numbers[i];
+            }
+            document.write(sum + "<br>");
+        }
+        add(4476,7875,45343,8082,76768);
+    </script>
+
+    <script>
+        //example2
+        function sumRest(name,...args)
+        {
+            document.write(`Hello ${name} <br>`);
+
+            let sum = 0;
+            for (let i in args)
+        {
+            sum += args[i];
+        }
+        document.write("Total Marks "+sum+"<br>");
+        }
+        sumRest("Neha", 78,67,90,56,87);
+    </script>
+
+    <script>
+        //example3
+        function studdetails(name, course, address, ...marks)
+        {
+            document.write(`Hello i am ${name} <br> My course is ${course} <br> My address is ${address} <br><hr>`);
+
+            let sum = 0;
+            for(let i in marks) {
+            sum += marks[i];
+        }
+        document.write(`Total marks is ${marks}`);
+        }
+        studdetails("Neha", "IT", "Pune", 78,90,45,67,87,76);
+    </script>
+
+    <script>
+        //example4
+        function studInfo(name, address, ...subjects)
+        {
+            document.write(`<br>student name: ${name} <br> address: ${address} <br> subjects: ${subjects}<hr>`);
+
+        }
+        studInfo("Neha","pune","Html","css","bootstrap","js");
+        studInfo("Ananya","aundh","Html","css","bootstrap","js");
+    </script>
+
+    <script>
+        //example5
+        function showSum(name,...numbers){
+            let total = 0;
+            for(let num of numbers){
+                total += num;
+            }
+            document.write(`Hello, ${name}<br>`);
+            document.write(`You Entered ${numbers.length} <br> numbers: ${numbers.join(", ")}<br><br>`);
+            console.log(`Total: ${total}`);
+        }
+        showSum("Aniket",78,90,67,87);
+        showSum("Sayali",78,90,67,87,56);
+        //Rest operator allows a function to accept any anumber of arg and collect then into array
+    </script>
+</body>
+</html>

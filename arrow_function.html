@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Arrow Definition = a shorter way of writing a funtion expression using =>
+    <script>
+        //funtion without parameter
+        //----old style----
+        function hello()
+        {
+            console.log("Hello students");
+        }
+        hello();
+
+        //using arrow function
+        const helloArrow = () =>  console.log("Hello using Arrow");
+        helloArrow();
+
+        //2.funtion with one parameter
+        //old style
+        function welcome(name){
+            console.log("welcome "+name);
+        }
+        welcome("Neha");
+
+
+        const welcomearrow = name =>
+        {
+            console.log("Using arrow welcome"+ name)
+        }
+        welcomearrow("Ananya");
+
+        //addition using arrow
+        const add = (a, b) => 
+        {
+            console.log(a+b);
+        }
+        add(10,80);
+
+        //function with return value
+        const addition = (x, y) => x+y;
+        let result1 = addition(23,56);
+        console.log(result1);
+
+        //funtion returning a string
+        const sayHello = name => "hello " + name;
+        console.log(sayHello("Neha"));
+
+        //function with template literal
+        const fullname = (fname, lname) => `${fname} ${lname}`;
+        console.log(fullname("Neha","Marathe"));
+
+        //multiple statements in arrow function
+        const calculateArrow = (a,b) =>
+        {
+            let sum = a+b;
+            let result = sum * 2;
+            return result;
+        }
+        console.log(calculateArrow(5, 20));
+
+        //returing object 
+        const getstudents = () =>
+        ({
+            name:"Neha",
+            address:"Pune",
+            position:"Intern"
+        });
+        console.log(getstudents());
+    </script>
+</body>
+</html>

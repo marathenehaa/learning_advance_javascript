@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = "Neha";
+        var address = "Pune";
+        var phone = "1234567890";
+
+        //normal string conacatination
+        document.write("My name is"+name+"my address"+address+"my contract"+phone+"<br><br>");
+
+        //document.write(``) = backtick
+        // ${name} = varible interpolation
+        //My address ${address} = template literal interpolation
+        //"${name}" = string interpolation
+        //Template string or literal
+        document.write(`My name is "${name}"", My address ${address}, My phone ${phone}`);
+
+        //define
+        //template literals are strings written using backticks (``) that allow us to easily insert variables or expressions using ${}
+    </script>
+
+    <script>
+        var fname = "Neha";
+        var lname = "Marathe";
+
+        function fullname(fname, lname)
+        {
+            return`${fname} ${lname}`;
+        }
+
+        let flname = `Hello ${fullname(fname, lname)}`;
+        document.write("<br>");
+        document.write(fullname(fname, lname));
+        document.write("<br>");
+        document.write(flname);
+    </script>
+</body>
+</html>

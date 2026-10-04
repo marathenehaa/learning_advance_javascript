@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //var is global scope
+        var a = "Hi its neha";
+        var a = "Hi its ananya";//redeclare
+        a = "Aniket";//reassign
+        console.log(a);
+
+        //let is functional/block scope
+        let b = "Hello its Anita";
+        //let b = "Hello its aniket";//redeclaration not allowed
+        b = "Hello its aniket";//reassign allowed
+
+        //const is functional/block scope
+        const c = "Hello its atul";
+        //const c = "Hello its sachin";//redeclaration not allowed
+        //c = "Hello its neha";//reassigrn not allowed
+
+        //diff bet scope in var let const
+        if(10==10){
+            var x = "Hello neha";//global 
+            let y = "Heloo sonal";//block scope
+            const z = "Hello sumruddhi";//block scope
+            console.log(y);
+            console.log(z);
+        }
+        console.log(x);
+    </script>
+
+    <script>
+        function example()
+        {
+            var p = 1;
+            let q = 2;
+            const r = 3;
+
+            if(true)
+        {
+            var p = 10;
+            let q = 20;
+            const r = 30;
+
+            //inside the block
+            document.write("----Inside the block----"+"<br>");
+            document.write("p = "+p+"<br>");//10
+            document.write("q = "+q+"<br>");//20
+            document.write("r = "+r+"<br>");//30
+
+        }
+            //outside the block
+            document.write("----outside the block----"+"<br>");
+            document.write("p = "+p+"<br>");//10(it was overwritten y inner var x)
+            document.write("q = "+q+"<br>");//2
+            document.write("r = "+r+"<br>");//3
+        }
+        //calling the function
+        example();
+    </script>
+</body>
+</html>
