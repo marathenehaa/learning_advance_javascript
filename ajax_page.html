@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ajax example using fetch mathod - liad json file</h2>
+    <button onclick="loadJSON()">Load JSON file</button>
+    <div id="output"></div>
+    <div id="output1"></div>
+    <script>
+        function loadJSON()
+        {
+         fetch("data.json")
+         .then(response => 
+        {
+            document.getElementById("output1").innerHTML = "HTTP status code" + response.status + "<br>";
+            if(!response.ok)
+        {
+            throw new Error("File not found...")
+        }
+        return response.json();
+        }
+         )
+         .then(data =>
+        {
+            document.getElementById("output").innerHTML = `<h3> JSON Loaded successfully...</h3> 
+            <b>Name:</b> ${data.name} <br>
+            <b>Age:</b> ${data.age} <br>
+            <b>City:</b> ${data.city} <br>
+            <b>Skills:</b> ${data.skills.join(",")}`
+        })
+        .catch(error =>
+        {
+            document.getElementById("output").innerHTML = `<p>${error.message}</p>`;
+        });
+        }
+    </script>
+</body>
+</html>

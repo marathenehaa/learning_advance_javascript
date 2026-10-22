@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Shopping Cart</title>
+</head>
+
+<body>
+
+    <h2>Online Shopping Cart</h2>
+    <div id="output"></div>
+
+    <script>
+        // 1. const and let
+        // const → value will not be reassigned
+        // let   → value can be changed
+
+        const shopName = "Neha Fashion Store";
+        let cart = [
+            {
+                id: 101,
+                name: "Kurti",
+                price: 800,
+                quantity: 2
+            },
+            {
+                id: 102,
+                name: "Jeans",
+                price: 1200,
+                quantity: 1
+            },
+            {
+                id: 103,
+                name: "Shoes",
+                price: 1500,
+                quantity: 1
+            }
+        ];
+
+        // 2. TEMPLATE LITERAL
+        document.getElementById("output").innerHTML = `
+            <h3>Welcome to ${shopName}</h3>
+            <p>Total products in cart: ${cart.length}</p>`;
+
+        // 3. OBJECT DESTRUCTURING
+        // Instead of:
+        // product.name
+        // product.price
+        // product.quantity
+
+        const showProduct = (product) => {
+            const {
+                name,
+                price,
+                quantity
+            } = product;
+            return `
+                <p>
+                    ${name} - ₹${price} × ${quantity}
+                </p>
+            `;
+        };
+
+        // 4. ARROW FUNCTION
+
+        const calculateItemTotal = (price, quantity) => price * quantity;
+
+        // 5. MAP + ARROW FUNCTION
+
+        const itemTotals = cart.map(product => {
+            const { price, quantity } = product;
+            return calculateItemTotal(price, quantity);
+        });
+        console.log("Item totals:", itemTotals);
+
+
+        // 6. REST OPERATOR
+
+        // Function can accept any number of prices
+
+        const calculateTotal = (...prices) => {
+            let total = 0;
+            for (let price of prices) {
+                total += price;
+            }
+            return total;
+        };
+
+
+        // 7. SPREAD OPERATOR
+        // Convert array values into individual arguments
+
+        const cartTotal = calculateTotal(...itemTotals );
+        console.log("Cart Total:", cartTotal);
+
+        // 8. ARRAY DESTRUCTURING
+
+        const [firstItem, secondItem, ...remainingItems] = cart;
+        console.log("First item:", firstItem);
+        console.log("Second item:", secondItem);
+        console.log("Remaining items:", remainingItems);
+
+
+        // 9. SPREAD OPERATOR WITH ARRAY
+        const newProduct = {
+            id: 104,
+            name: "Handbag",
+            price: 900,
+            quantity: 1
+        };
+
+        // Add new product without directly modifying
+        // the original cart reference
+        const updatedCart = [...cart, newProduct];
+        console.log("Updated Cart:", updatedCart);
+
+        // 10. SPREAD OPERATOR WITH OBJECT
+        // Suppose customer wants to increase quantity
+
+        const updatedProduct = {...firstItem, quantity: firstItem.quantity + 1};
+        console.log("Updated Product:", updatedProduct);
+
+        // 11. FUNCTION PARAMETER DESTRUCTURING
+
+        const createProductMessage = ({
+            name,
+            price,
+            quantity
+        }) => 
+        {
+
+            return `${name} costs ₹${price}and quantity is ${quantity}`;
+        };
+
+
+        console.log(
+            createProductMessage(firstItem));
+
+
+        // 12. TEMPLATE LITERAL + DESTRUCTURING
+
+        let productList = "";
+
+        updatedCart.forEach(
+            ({ name, price, quantity }) => {
+
+                productList += `
+                    <li>
+                        ${name} -
+                        ₹${price} × ${quantity}
+                    </li>`;
+            }
+        );
+
+        // 13. FINAL SHOPPING CART DISPLAY
+
+        document.getElementById("output").innerHTML += `<h3>Shopping Cart</h3>
+            <ul>
+                ${productList}
+            </ul>
+            <h3>
+                Cart Total: ₹${cartTotal}
+            </h3>`;
+
+
+        // 14. REST + DESTRUCTURING TO GET REMAINING PRODUCTS
+
+        const [first,...otherProducts] = updatedCart;
+
+        console.log("First product:", first);
+        console.log("Other products:", otherProducts);
+
+        // 15. REAL-TIME DISCOUNT CALCULATION
+
+        const applyDiscount = (total, discount = 10) => {
+            return total - (total * discount / 100);
+        };
+
+        const finalAmount = applyDiscount(cartTotal,10);
+
+        console.log(`Final amount after discount: ₹${finalAmount}`);
+
+
+        // FINAL MESSAGE
+
+        document.getElementById("output").innerHTML += `
+            <hr>
+            <h3>Order Summary</h3>
+            <p>Original Total: ₹${cartTotal}</p>
+            <p>Discount: 10%</p>
+            <p>
+                <strong>
+                    Final Amount: ₹${finalAmount}
+                </strong>
+            </p>`;
+
+    </script>
+
+</body>
+</html>

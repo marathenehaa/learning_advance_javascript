@@ -1,0 +1,45 @@
+[
+    {
+    "name" : "Neha",
+    "age" : 21,
+    "city" : "Pune",
+    "skills" : ["Java", "React", "Advance JS", "Python"]
+    },
+    {
+    "name" : "Ananya",
+    "age" : 19,
+    "city" : "Nashik",
+    "skills" : ["Advance JS", "Python"]
+    },
+    {
+    "name" : "Aniket",
+    "age" : 25,
+    "city" : "Punawale",
+    "skills" : ["React","JS", "CSS"]
+    },
+    {
+    "name" : "Rahul",
+    "age" : 23,
+    "city" : "Nashik",
+    "skills" : ["JAVA", "DSA"]
+    },
+    {
+    "name" : "Pranali",
+    "age" : 22,
+    "city" : "Solapur",
+    "skills" : ["MERN", "Web Development"]
+    },
+    {
+    "name" : "Neha Marathe",
+    "age" : 21,
+    "city" : "Pune",
+    "skills" : ["Java", "React", "Advance JS", "Python"]
+    },
+    {
+    "name" : "Aniket Shirke",
+    "age" : 25,
+    "city" : "Punawale",
+    "skills" : ["React","JS", "CSS"]
+    }
+    
+]

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //parent class
+        class Person
+        {
+            constructor(name,age)
+            {
+                this.name = name;
+                this.age = age;
+            }
+            showInfo()
+            {
+                document.write(`<h1>Person Info : </h1>  Name : ${this.name} <br> Age : ${this.age}`);
+            }
+        }
+
+        //child class
+        class student extends Person
+        {
+            constructor(name,age,rollno)
+            {
+                super(name,age);
+                this.rollno = rollno;
+            }
+            showStudent()
+            {
+                document.write(`<h1>Person Info : </h1> Name : ${this.name} <br> Age : ${this.age}, Roll no: ${this.rollno}`);
+            }
+        }
+
+        class employee extends Person
+        {
+            constructor(name,age,emp_id,salary)
+            {
+                super(name,age);
+                this.emp_id = emp_id;
+                this.salary = salary;
+            }
+            showEmp()
+            {
+                document.write(`<h1>Person Info : </h1> Name : ${this.name} <br> Age : ${this.age}, Employee id: ${this.emp_id}, Salary: ${this.salary}`);
+            }
+        }
+
+        const s1 = new student("Neha",21,101);
+        s1.showStudent();
+
+        const e1 = new employee("Ananya",25,1020,50000);
+        e1.showEmp();
+        
+    </script>
+</body>
+</html>

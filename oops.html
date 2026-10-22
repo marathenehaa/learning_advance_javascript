@@ -15,7 +15,7 @@
             }
             helloWorld()
             {
-                document.write("Welcome to Pune" + "<br>");
+                document.write("Welcome to Pune" + "<br><hr>");
             }
         }
         let a = new Hello();
@@ -41,5 +41,68 @@
         let student2 =  new student();
         student2.display("Neha","IT");
     </script>
+
+    <script>
+        //constructor method
+        class student11{
+            constructor(){
+                document.write(`Hello constructor call directly <br><br><hr>`); 
+            }
+        }
+        let s = new student11();
+    </script>
+
+    <script>
+        //constructor with parameter
+        //constructor is a special method inside a class that is automatically called when we create object
+        class person
+        {
+            constructor(name, age)
+            {
+                this.p_name = name;//assign value to the objects property
+                this.p_age = age;//referes to the current object being created
+                this.display();//methods called inside constructor
+            }
+            display()
+            {
+                document.write(`Name : ${this.p_name}, Age : ${this.p_age} <br>`);
+            }
+        }
+        const s1 = new person("Rutuja", 21);//contructor call ed automatically
+        const s2 = new person("Aniket", 25);
+        const s3 = new person("Nilesh", 23);
+        // s1.display();
+        // s2.display();
+    </script>
+
+    <script>
+        //static method
+        class student101
+        {
+            constructor(name, course)
+            {
+                this.name = name;
+                this.course = course;
+                this.display();
+            }
+            display()
+            {
+                console.log(`Name : ${this.name}`);
+                console.log(`Course : ${this.course}`);
+            }
+            //static method
+            static collegeName()
+            {
+                console.log("PCCOE");
+            }
+        }
+        let student_s = new student101("Aniket","IT");
+        student_s.display();
+
+        //calling static method using classname - class.staticmethod name
+        //static method belongs only to that class
+        student101.collegeName();
+    </script>
+
 </body>
 </html>
