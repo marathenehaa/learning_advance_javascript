@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.Map
+        //definition: the map() method executes a callback function for every array element and return a new array with new values
+        let numbers = [10,20,30,40];
+
+        let result = numbers.map(function(num){
+            return num * 2;
+        });
+        console.log(result);
+    </script>
+
+    <script>
+        //convert names to uppercase
+        let names = ["rahul","divya","karan","pratik","sonal"];
+        let result1 = names.map(name => name.toUpperCase());
+        console.log(result1);
+    </script>
+
+    <script>
+        //calculate prices with gst - 1.18%
+        let prices = [100,200,300];
+
+        let finalPrice = prices.map((price) => price * 1.18);
+        console.log(finalPrice);
+    </script>
+
+    <script>
+        //exatract student name
+        let students = [
+            {name: "Rahul", marks: 90},
+            {name: "sumit", marks: 80},
+            {name: "pranali", marks: 50},
+            {name: "Dinesh", marks: 10},
+            {name: "santosh", marks: 95}
+        ];
+        let server = students.map(students => students.name);
+        console.log(server);
+    </script>
+
+    <script>
+        //2.filter()
+        //The filter() methods return a new array containing only the elements that satisfy a condition
+        let numbers2 = [10,15,20,22,45,48,76,98,99];
+
+        let result3 = numbers2.filter(num => num % 2 === 0);
+        console.log(result3);
+    </script>
+
+    <script>
+        let marks = [35, 80, 25, 78, 41, 76, 21, 65];
+        let passed = marks.filter((marks) => marks >= 60);
+        console.log(passed);
+    </script>
+
+    <script>
+        let price2 = [500, 300, 1000, 800, 150, 1200, 1400, 900];
+        let result4 = price2.filter((price) => price >= 1000);
+        console.log(result4);
+    </script>
+
+    <script>
+        let employees =
+        [
+            {name: "Sachin", active: true},
+            {name: "Mahesh", active: true},
+            {name: "Vivek", active: false},
+            {name: "Deepak", active: true},
+            {name: "Raja", active: false},
+        ];
+        let result5 = employees.filter((emp) => emp.active);
+        console.log(result5);
+    </script>
+
+    <script>
+        //3.foreach() - perform an action for evry element
+        //definition: the forEach() methods executes callback function for each element of an array, but it does not return a new array
+
+        let name2 = ["Rahul","Ganesh","Samarth","Khagesh"];
+        
+        name2.forEach(function(name){
+            console.log(name);
+        })
+
+    </script>
+
+    <script>
+        let numbers6 = [2,3,4,5];
+        numbers6.forEach(num =>{
+            console.log("Number is ",num);
+            console.log("Square is ",num*num);
+        });
+    </script>
+
+    <script>
+        //4.reduce() -converts an array into a single result
+        //Definition: The reduce() methods is processes array elements and accumlates them into a singleresult, such as number, string, object or another array
+
+        //syntax
+        /*array.reduce((accumaltor, currentvalue) => {
+        },initialvalue);
+        accumaltor: stores the accumlated resultcurrentvalue: the current array element
+        initial value: the starting value of accumulator*/
+        let numbers7 = [10,20,30,50,80];
+
+        let total = numbers7.reduce((sum, num) => {
+            return sum+num;
+        },0);
+    </script>
+
+    <script>
+        let numbers8 = [25,67,78,23,67];
+        let maximum = numbers8.reduce((max, num) => {
+            return num > max ? num : max;
+        },numbers8[0]);
+        console.log(maximum);
+    </script>
+
+    <script>
+        //5.find()
+        //find() returns the first element that satisfies the given condition
+        let numbers9 = [10,20,30,40,50];
+        let result9 = numbers9.find(function(num){
+            return num > 33;
+        });
+        console.log(result9);
+    </script>
+</body>
+</html>
