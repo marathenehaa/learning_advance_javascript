@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for loop: a for loop is used when we know how many times we want to excute a block of code
+        //syntax: for(initilization; condition; increment/decrement){
+        //code to execute}
+
+        //print numbers from 1 to 100
+        for(let i=1; i<=10; i++)
+        {
+            console.log(i);
+        }
+    </script>
+
+    <script>
+        //print even number from 1 to 20
+        for(let i=1; i<=20; i++)
+        {
+            if(i % 2 === 0)
+            {
+                console.log(i);
+            }
+        }
+    </script>
+
+    <script>
+        //print table of 5
+        let num = 5
+        for(let i=1; i<=10; i++)
+    {
+        let result = num * i;
+        console.log(num + "x" + i + "=" + result);
+    }
+    </script>
+    <script>
+        //sum of numbers from 1 to 10
+        let sum = 0;
+        for(let i=1; i<=10; i++){
+            sum += i;
+        }
+        console.log(sum);
+
+    </script>
+
+    <script>
+        //print 10 to 1
+        for(let i=10; i>=1; i--)
+        {
+            console.log(i);
+        }
+    </script>
+
+    <script>
+        //print 1 to 25 numbers how many odd and how many even 
+        let evenCount = 0;
+        let oddCount = 0;
+
+        for(let i=1; i<=25; i++){
+            if(i % 2 === 0){
+                evenCount++;
+            }
+            else{
+                oddCount++;
+            }
+        }
+        console.log(`Total even number ${evenCount}`);
+        console.log(`Total odd number ${oddCount}`);
+    </script>
+
+    <script>
+        let students = ["Rahul","Karan","Pratik","Mahesh","Ganesh"];
+        for(let i=0; i<students.length; i++)
+    {
+        console.log(students[i]);
+    }
+    </script>
+
+    <script>
+        //Find largest number in array
+        let numbers = [23,45,21,67,45,33,54,20];
+        let largest = numbers[0];
+        for(let i=1; i<numbers.length; i++){
+            if(numbers[i]>largest){
+                largest = numbers[i];
+            }
+        }
+        console.log("largest number: "+largest);
+    </script>
+
+    <h2>Star Pattern</h2>
+    <pre id="result"></pre>
+    <script>
+        let pattern = "";
+
+        for(let i=1; i<=5; i++){
+            for(let j=1; j<=i; j++){
+                pattern += "*";
+            }
+            pattern += "\n";
+        }
+        document.getElementById("result").textContent = pattern;
+    </script>
+</body>
+</html>
